@@ -56,9 +56,7 @@ end
 local service = setmetatable({}, { __index = fromser, __call = fromser })
 
 local players = service("Players")
-local got_ui, ui_source = pcall(function()
-    return game:GetObjects("rbxassetid://11738969913")
-end)
+local got_ui, ui_source = pcall(game.GetObjects, game, "rbxassetid://11738969913")
 
 assert(got_ui, 'aim-assistant.lua: failed to get ui')
 
